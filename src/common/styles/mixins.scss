@@ -1,0 +1,35 @@
+@import './variables';
+
+@mixin container($width: 1369) {
+  margin: 0 auto;
+  width: calc($width / 1920 * 100%);
+}
+
+@mixin text($fontFamily: 'Lato', $fontStyle: normal, $fontWeight: 500, $fontSize: 20px, $lineHeight: 24px) {
+  font-family: $fontFamily, sans-serif;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin title($fontFamily: 'Georgia', $fontSize: '50px', $fontWeight: 700, $lineHeight: 157%) {
+  @include text($fontFamily: $fontFamily, $fontSize: $fontSize, $fontWeight: $fontWeight, $lineHeight: $lineHeight);
+  color: $primaryColor;
+}
+
+@mixin button($padding: 20px 50px) {
+  padding: $padding;
+  @include text($fontWeight: 400, $lineHeight: 25px);
+  color: #ffffff;
+  background: $primaryColor;
+  border: 1px solid $primaryColor;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@mixin flex($justifyContent: center, $alignItems: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}

@@ -1,0 +1,34 @@
+@import '../../common/styles/variables';
+@import '../../common/styles/mixins';
+
+.footer {
+  padding: 95px 0 144px 0;
+  background: $backgroundSecondColor;
+
+  .footerContainer {
+    @include container();
+
+    .footerTitle {
+      @include text($fontWeight: 900, $fontSize: 40px, $lineHeight: 55px);
+      color: #ffffff;
+    }
+
+    .footerNav {
+      margin-top: 60px;
+
+      .footerNavList {
+        @include flex($alignItems: flex-start);
+        flex-direction: column;
+        gap: 60px;
+        list-style-type: none;
+
+        li a {
+          @include text($fontWeight: 600, $fontSize: 25px, $lineHeight: 30px);
+          color: #ffffff;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

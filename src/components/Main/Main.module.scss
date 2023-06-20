@@ -1,0 +1,31 @@
+@import '../../common/styles/mixins';
+
+.main {
+  padding: 187px 0 336px 0;
+  background: url('../../assets/images/mainBackground.jpg') center / cover no-repeat;
+
+  .mainContainer {
+    @include container();
+
+    .mainContent {
+      @include flex();
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      width: 440px;
+
+      .title {
+        @include title($fontSize: 65px, $lineHeight: 74px)
+      }
+
+      .description {
+        @include text($fontWeight: 400, $lineHeight: 31px);
+        min-height: 123px;
+      }
+
+      .button {
+        @include button();
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@import '../../common/styles/mixins';
+
+.pricing {
+  padding: 120px 0 168px 0;
+
+  .pricingContainer {
+    position: relative;
+    @include container();
+    @include flex($justifyContent: space-between, $alignItems: flex-start);
+
+    .pricingPhoto {
+      margin-left: 61px;
+      margin-bottom: 75px;
+    }
+
+    .pricingText {
+      max-width: 587px;
+
+      .designation {
+        @include text($fontWeight: 600, $fontSize: 25px, $lineHeight: 157%);
+        color: #424242;
+      }
+
+      .title {
+        margin-top: 16px;
+        @include title($fontSize: 50px);
+      }
+
+      .description {
+        margin-top: 14px;
+        @include text($fontWeight: 400, $lineHeight: 31px);
+        color: #484848;
+      }
+
+      .button {
+        margin-top: 40px;
+        @include button();
+      }
+    }
+
+    .card {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include flex();
+      flex-direction: column;
+      padding: 23px 20px 31px 20px;
+      width: 296px;
+      background: #ffffff;
+      border-radius: 4px;
+      filter: drop-shadow(0px 3.62249px 18.1125px rgba(165, 165, 165, 0.25));
+
+      .cardTitle {
+        @include text($fontWeight: 600, $fontSize: 15px, $lineHeight: 157%);
+      }
+
+      .line {
+        margin-top: 8px;
+        width: 111px;
+        height: 1px;
+        color: #000000;
+      }
+
+      .avatar {
+        margin-top: 14px;
+        border-radius: 50%;
+      }
+
+      .name {
+        margin-top: 11px;
+        @include text($fontWeight: 400, $fontSize: 12px, $lineHeight: 157%);
+      }
+
+      .contentsTitle {
+        margin-top: 20px;
+        @include title($fontSize: 16px);
+        color: #000000;
+      }
+
+      .contents {
+        align-self: flex-start;
+        @include flex();
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 16px;
+        margin-left: 56px;
+        @include text($fontWeight: 400, $fontSize: 11px, $lineHeight: 157%);
+        color: #000000;
+
+        li {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

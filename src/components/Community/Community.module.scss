@@ -1,0 +1,55 @@
+@import '../../common/styles/variables';
+@import '../../common/styles/mixins';
+
+.community {
+  padding: 229px 0 177px 0;
+
+  .communityContainer {
+    @include container(1507);
+    @include flex($justifyContent: space-between);
+    gap: 31px;
+
+    .textBlock {
+      max-width: 580px;
+
+      .title {
+        @include title($fontSize: 50px);
+        color: #ffffff;
+      }
+
+      .description {
+        margin-top: 33px;
+        @include text($fontWeight: 600, $fontSize: 25px, $lineHeight: 157%);
+        color: #ffffff;
+      }
+
+      .button {
+        margin-top: 57px;
+        @include button();
+      }
+    }
+
+    .videoBlock {
+      position: relative;
+      flex-grow: 1;
+      height: 516px;
+      background: url('../../assets/images/videoPreview.jpg') center / cover no-repeat;
+      border-radius: 16px;
+
+      .iconWrapper {
+        & *:hover {
+          fill: $primaryColor;
+        }
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
