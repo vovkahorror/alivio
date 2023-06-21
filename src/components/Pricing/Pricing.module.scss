@@ -7,10 +7,16 @@
     position: relative;
     @include container();
     @include flex($justifyContent: space-between, $alignItems: flex-start);
+    gap: 60px;
 
     .pricingPhoto {
       margin-left: 61px;
       margin-bottom: 75px;
+
+      @media (max-width: 1300px) {
+        margin-left: 20px;
+        width: 400px;
+      }
     }
 
     .pricingText {
@@ -40,7 +46,7 @@
 
     .card {
       position: absolute;
-      bottom: 0;
+      top: 354px;
       left: 0;
       @include flex();
       flex-direction: column;
@@ -90,6 +96,10 @@
         li {
           align-self: flex-start;
         }
+      }
+
+      @media (max-width: 1300px) {
+        top: 260px;
       }
     }
   }

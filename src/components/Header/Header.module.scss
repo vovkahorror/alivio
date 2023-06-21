@@ -17,40 +17,14 @@
 
     .logo {
       margin-right: calc(172 / 1386 * 100%);
-    }
 
-    .headerNav {
-      flex-grow: 1;
-
-      .headerNavList {
-        @include flex($justifyContent: space-between);
-        gap: 20px;
-        list-style-type: none;
-
-        li a {
-          color: #292929;
-          text-decoration: none;
-        }
+      @media (max-width: 1300px) {
+        margin-right: 40px;
       }
     }
+  }
 
-    .headerActions {
-      @include flex();
-      gap: 35px;
-      margin-left: calc(283 / 1386 * 100%);
-
-      .signIn {
-        padding: 0;
-        @include text();
-        color: #000000;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-
-      .startTrial {
-        @include button($padding: 13px 50px);
-      }
-    }
+  @media (max-width: 1016px) {
+    font-size: 16px;
   }
 }

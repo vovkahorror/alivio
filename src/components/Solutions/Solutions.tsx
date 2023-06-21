@@ -1,6 +1,7 @@
 import styles from './Solutions.module.scss';
 import {steps} from './steps';
 import {Step} from './Step/Step';
+import {v1} from 'uuid';
 
 export const Solutions = () => {
     return (
@@ -16,7 +17,8 @@ export const Solutions = () => {
 
                 <div className={styles.steps}>
                     {steps.map((step, index) => {
-                        return <Step number={(index + 1).toString().padStart(2, '0')}
+                        return <Step key={v1()}
+                                     number={(index + 1).toString().padStart(2, '0')}
                                      title={step.title}
                                      description={step.description}
                                      secondParagraph={step.secondParagraph}

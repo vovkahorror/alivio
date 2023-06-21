@@ -3,6 +3,10 @@
 @mixin container($width: 1369) {
   margin: 0 auto;
   width: calc($width / 1920 * 100%);
+
+  @media (max-width: 1600px) {
+    width: 80%;
+  }
 }
 
 @mixin text($fontFamily: 'Lato', $fontStyle: normal, $fontWeight: 500, $fontSize: 20px, $lineHeight: 24px) {
@@ -22,10 +26,26 @@
   padding: $padding;
   @include text($fontWeight: 400, $lineHeight: 25px);
   color: #ffffff;
-  background: $primaryColor;
+  white-space: nowrap;
+  background: linear-gradient(to right, $primaryColor, #ffffff, #0abd8a);
+  background-size: 1000%;
   border: 1px solid $primaryColor;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-position 0.5s linear, transform 0.2s ease-out;
+
+  &:hover {
+    background-position: right;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 1016px) {
+    padding: 20px 30px;
+    font-size: 16px;
+  }
 }
 
 @mixin flex($justifyContent: center, $alignItems: center) {

@@ -1,0 +1,76 @@
+@import '../../../common/styles/variables';
+@import '../../../common/styles/mixins';
+
+
+.headerNav {
+  flex-grow: 1;
+
+  .headerNavList {
+    @include flex($justifyContent: space-between);
+    gap: 20px;
+    list-style-type: none;
+
+    li a {
+      display: block;
+      color: #292929;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 10px;
+      transition: 0.2s ease-out;
+
+      &:hover {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(1, 153, 109, 0.16);
+        color: $primaryColor;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    @media (max-width: 878px) {
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  }
+}
+
+.headerActions {
+  @include flex();
+  gap: 35px;
+  margin-left: calc(283 / 1386 * 100%);
+
+  .signIn {
+    padding: 5px;
+    @include text();
+    color: #000000;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(1, 153, 109, 0.16);
+      color: $primaryColor;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @media (max-width: 1016px) {
+      font-size: 16px;
+    }
+  }
+
+  .startTrial {
+    @include button($padding: 13px 50px);
+  }
+
+  @media (max-width: 1300px) {
+    margin-left: 40px;
+  }
+}
