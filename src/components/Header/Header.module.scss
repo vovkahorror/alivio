@@ -1,3 +1,4 @@
+@import '../../common/styles/variables';
 @import '../../common/styles/mixins';
 
 .header {
@@ -9,6 +10,7 @@
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   z-index: 10;
+  transition: 0.3s;
 
   .headerContainer {
     @include container();
@@ -18,13 +20,151 @@
     .logo {
       margin-right: calc(172 / 1386 * 100%);
 
-      @media (max-width: 1300px) {
+      @media (max-width: 1500px) {
         margin-right: 40px;
+      }
+
+      @media (max-width: 1200px) {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+      }
+    }
+
+    .headerActions {
+      @include flex();
+      gap: 35px;
+      margin-left: calc(283 / 1386 * 100%);
+      transition: 0.3s;
+
+      .signIn {
+        padding: 5px;
+        @include text();
+        color: #000000;
+        background: none;
+        border: none;
+        border-radius: 10px;
+        transition: 0.2s ease-out;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(1, 153, 109, 0.16);
+          color: $primaryColor;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        @media (max-width: 1200px) {
+          font-size: 16px;
+        }
+      }
+
+      .startTrial {
+        @include button($padding: 13px 50px);
+
+        @media (max-width: 1200px) {
+          padding: 8px 30px;
+        }
+      }
+
+      @media (max-width: 1500px) {
+        margin-left: 40px;
+      }
+
+      @media (max-width: 1200px) {
+        position: absolute;
+        top: 20px;
+        right: 140px;
+      }
+
+      @media (max-width: 768px) {
+        top: -500%;
+        right: 40px;
+
+        &.open {
+          top: 100px;
+        }
+      }
+    }
+
+    .burgerButtonWrapper {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      width: 40px;
+      height: 100%;
+      cursor: pointer;
+
+      .burgerButton {
+        position: absolute;
+        top: 40px;
+        width: 2.3rem;
+        height: 0.2rem;
+        border-radius: 2px;
+        background-color: $primaryColor;
+        display: block;
+        margin: 0;
+        transition: 400ms;
+
+        &:before {
+          position: absolute;
+          width: 1.3rem;
+          height: 0.2rem;
+          border-radius: 2px;
+          background-color: $primaryColor;
+          display: block;
+          margin: auto;
+          transition: 400ms;
+          content: '';
+          backface-visibility: hidden;
+          transform: rotate(0deg) translateY(10px);
+          right: 0;
+        }
+
+        &:after {
+          position: absolute;
+          width: 2.3rem;
+          height: 0.2rem;
+          border-radius: 2px;
+          background-color: $primaryColor;
+          display: block;
+          margin: auto;
+          transition: 400ms;
+          content: '';
+          backface-visibility: hidden;
+          transform: rotate(0deg) translateY(-10px);
+        }
+
+        &.open {
+          background-color: rgba(255, 255, 255, 0);
+
+          &:before {
+            transform: rotate(45deg) translateY(0px);
+            width: 2.3rem;
+          }
+
+          &:after {
+            transform: rotate(-45deg) translateY(0px);
+          }
+        }
+      }
+
+      @media (min-width: 1201px) {
+        display: none;
       }
     }
   }
 
-  @media (max-width: 1016px) {
-    font-size: 16px;
+  &.open {
+    @media (max-width: 1200px) {
+      height: 100vh;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    position: fixed;
+    width: 100vw;
   }
 }

@@ -12,7 +12,7 @@ export const Step: FC<StepPropsType> = ({number, title, description, secondParag
                 {description}<br/>
                 {secondParagraph ? secondParagraph : null}
             </p>
-            <img src={image} alt="illustration"/>
+            <img src={image} alt="illustration" className={styles.image}/>
         </div>
     );
 };

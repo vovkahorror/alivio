@@ -9,6 +9,10 @@
     .designation {
       @include text($fontWeight: 600, $fontSize: 24px, $lineHeight: 157%);
       color: #424242;
+
+      @media (max-width: 768px) {
+        margin-bottom: 16px;
+      }
     }
 
     .introduction {
@@ -18,12 +22,24 @@
       .title {
         @include title($fontSize: 50px);
         max-width: 584px;
+
+        @media (max-width: 768px) {
+          max-width: unset;
+        }
+
+        @media (max-width: 576px) {
+          font-size: 40px;
+        }
       }
 
       .description {
         @include text($lineHeight: 150%);
         max-width: 650px;
         color: #424242;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
       }
     }
   }

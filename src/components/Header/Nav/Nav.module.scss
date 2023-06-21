@@ -9,6 +9,7 @@
     @include flex($justifyContent: space-between);
     gap: 20px;
     list-style-type: none;
+    transition: 0.3s;
 
     li a {
       display: block;
@@ -28,49 +29,32 @@
       }
     }
 
-    @media (max-width: 878px) {
+    @media (max-width: 1500px) {
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-  }
-}
-
-.headerActions {
-  @include flex();
-  gap: 35px;
-  margin-left: calc(283 / 1386 * 100%);
-
-  .signIn {
-    padding: 5px;
-    @include text();
-    color: #000000;
-    background: none;
-    border: none;
-    border-radius: 10px;
-    transition: 0.2s ease-out;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(1, 153, 109, 0.16);
-      color: $primaryColor;
+      gap: 30px;
     }
 
-    &:active {
-      transform: scale(0.9);
+    @media (max-width: 1200px) {
+      position: absolute;
+      top: -500%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      flex-direction: column;
+      gap: 100px;
+      font-size: 70px;
+
+      &.open {
+        top: 50%;
+      }
+
+      li a:hover {
+        box-shadow: none;
+      }
     }
 
-    @media (max-width: 1016px) {
-      font-size: 16px;
+    @media (max-width: 768px) {
+      font-size: 50px;
     }
-  }
-
-  .startTrial {
-    @include button($padding: 13px 50px);
-  }
-
-  @media (max-width: 1300px) {
-    margin-left: 40px;
   }
 }

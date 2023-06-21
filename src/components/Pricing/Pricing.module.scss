@@ -17,6 +17,11 @@
         margin-left: 20px;
         width: 400px;
       }
+
+      @media (max-width: 576px) {
+        margin: 0 auto;
+        width: 90%;
+      }
     }
 
     .pricingText {
@@ -30,6 +35,10 @@
       .title {
         margin-top: 16px;
         @include title($fontSize: 50px);
+
+        @media (max-width: 576px) {
+          font-size: 40px;
+        }
       }
 
       .description {
@@ -42,11 +51,15 @@
         margin-top: 40px;
         @include button();
       }
+
+      @media (max-width: 1200px) {
+        max-width: unset;
+      }
     }
 
     .card {
       position: absolute;
-      top: 354px;
+      bottom: 0;
       left: 0;
       @include flex();
       flex-direction: column;
@@ -96,11 +109,30 @@
         li {
           align-self: flex-start;
         }
+
+        @media (max-width: 576px) {
+          align-self: center;
+          margin-left: 0;
+        }
       }
 
-      @media (max-width: 1300px) {
-        top: 260px;
+      @media (max-width: 1200px) {
+        bottom: -80px
+      }
+
+      @media (max-width: 576px) {
+        width: 80%;
+        bottom: -220px;
+        text-align: center;
       }
     }
+
+    @media (max-width: 1200px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding-bottom: 300px;
   }
 }
