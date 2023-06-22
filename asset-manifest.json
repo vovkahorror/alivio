@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/alivio/static/css/main.458452e4.css",
+    "main.js": "/alivio/static/js/main.93859682.js",
+    "static/js/787.2289c6f6.chunk.js": "/alivio/static/js/787.2289c6f6.chunk.js",
+    "static/media/mainBackground.jpg": "/alivio/static/media/mainBackground.2d85b1b0f5ca12038a05.jpg",
+    "static/media/pricingPhoto.jpg": "/alivio/static/media/pricingPhoto.acff2c8be8d52b378ef3.jpg",
+    "static/media/step3.jpg": "/alivio/static/media/step3.f0e03d047e05b5ad98e6.jpg",
+    "static/media/videoPreview.jpg": "/alivio/static/media/videoPreview.016cb8439224e87ed8d9.jpg",
+    "static/media/step2.jpg": "/alivio/static/media/step2.dfa043b015c82bbd4894.jpg",
+    "static/media/step1.jpg": "/alivio/static/media/step1.26ab771fee6e2784f063.jpg",
+    "static/media/logo.svg": "/alivio/static/media/logo.82fbac2abc7746ecd4a30e62661be59a.svg",
+    "static/media/playButton.svg": "/alivio/static/media/playButton.01241b5dab1e17120042729f221396b0.svg",
+    "index.html": "/alivio/index.html",
+    "main.458452e4.css.map": "/alivio/static/css/main.458452e4.css.map",
+    "main.93859682.js.map": "/alivio/static/js/main.93859682.js.map",
+    "787.2289c6f6.chunk.js.map": "/alivio/static/js/787.2289c6f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.458452e4.css",
+    "static/js/main.93859682.js"
+  ]
+}
