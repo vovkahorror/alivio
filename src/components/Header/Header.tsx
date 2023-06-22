@@ -1,14 +1,19 @@
 import styles from './Header.module.scss';
 import logo from '../../assets/icons/logo.svg';
 import {Nav} from './Nav/Nav';
-import {useEffect, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 
-export const Header = () => {
+export const Header: FC<HeaderPropsType> = ({setIsPopupOpen}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const disableIsOpen = () => isOpen && setIsOpen(false);
+
+    const openPopup = () => {
+        disableIsOpen();
+        setIsPopupOpen(true);
+    };
 
     useEffect(() => {
         isOpen && (document.body.style.overflow = 'hidden');
@@ -24,7 +29,7 @@ export const Header = () => {
 
                 <div className={`${styles.headerActions} ${isOpen ? styles.open : ''}`}>
                     <button className={styles.signIn} onClick={disableIsOpen}>Sign in</button>
-                    <button className={styles.startTrial} onClick={disableIsOpen}>Start Trial</button>
+                    <button className={styles.startTrial} onClick={openPopup}>Start Trial</button>
                 </div>
 
                 <div className={styles.burgerButtonWrapper} onClick={toggleMenu}>
@@ -34,3 +39,7 @@ export const Header = () => {
         </header>
     );
 };
+
+type HeaderPropsType = {
+    setIsPopupOpen: (isPopupOpen: boolean) => void;
+}

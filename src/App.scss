@@ -1,6 +1,8 @@
 @import './common/styles/variables';
 
 .App {
+  position: relative;
+
   main > *:nth-child(odd) {
     background-color: $backgroundSecondColor;
   }

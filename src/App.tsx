@@ -5,11 +5,15 @@ import {Solutions} from './components/Solutions/Solutions';
 import {Community} from './components/Community/Community';
 import {Pricing} from './components/Pricing/Pricing';
 import {Footer} from './components/Footer/Footer';
+import {Registration} from './common/components/Registration/Registration';
+import {useState} from 'react';
 
 function App() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
     return (
         <div className="App">
-            <Header/>
+            <Header setIsPopupOpen={setIsPopupOpen}/>
             <main>
                 <Main/>
                 <Solutions/>
@@ -17,6 +21,7 @@ function App() {
                 <Pricing/>
             </main>
             <Footer/>
+            <Registration isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen}/>
         </div>
     );
 }

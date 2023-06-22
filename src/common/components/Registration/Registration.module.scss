@@ -1,0 +1,89 @@
+@import '../../../common/styles/variables';
+@import '../../../common/styles/mixins';
+
+.registration {
+  position: fixed;
+  top: 500%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 40px;
+  width: 600px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border: 2px solid $primaryColor;
+  border-radius: 16px;
+  transition: all 0.3s;
+
+  form {
+    @include flex();
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      @include title($fontSize: 40px);
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+
+    .inputBlock {
+      @include flex($alignItems: flex-start);
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      @include text($fontSize: 22px);
+
+      input {
+        padding: 15px;
+        width: 100%;
+        @include text($fontSize: 16px);
+        outline: none;
+        border: 1px solid rgba(78, 93, 120, 0.4);
+        border-radius: 10px;
+        transition: 0.3s;
+
+        &::placeholder {
+          font-weight: 400;
+        }
+
+        &:focus {
+          border: 1px solid transparent;
+          box-shadow: 0 0 0 2px rgba(1, 153, 109, 0.4);
+        }
+
+        @media (max-width: 768px) {
+          padding: 10px;
+        }
+      }
+
+      .error {
+        font-size: 16px;
+        color: #cb0000;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+
+    .button {
+      @include button();
+      padding: 13px 50px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  &.open {
+    top: 50%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    width: 90%;
+  }
+}
